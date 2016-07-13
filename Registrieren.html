@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrieren</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> <!-- Angular Animation -->
+    <link href="style.css" type="text/css" rel="stylesheet" /> <!-- CSS Datei -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    <!-- Javascript eingebunden -->
+<script>
+    // Cookies
+    function setCookie(cname) {      // machst den Cookie
+        document.cookie = cname;    // Name wert und ablaufdatum
+    }
+    // Zweiter cookie
+    function setCookie2(cookie2) {      // macht den Cookie
+        document.cpw = cookie2;   // Name wert und ablaufdatum
+    }
+
+    function registerBN() {
+        var cookie1 = prompt("Wie lautet dein Benutzername?");
+        setCookie(cookie1)
+    }
+
+    function registerPW() {
+        var cookie2 = prompt("Wie soll dein Passwort sein?");
+        setCookie2(cookie2)
+    }
+
+    function back() {
+        window.document.location.replace ("http://localhost:63342/NODEJS/webseite.html?_ijt=ibd9idqc65e472uup5tmbbcr6e");
+    }
+</script>
+</head>
+<body>
+    <input type="button" value="Benutzername" onclick="registerBN()" />
+       <input type="button" value="Passwort" onclick="registerPW()" />
+    <input type="button" value="Login" onclick="back()" />
+
+
+</body>
+</html>

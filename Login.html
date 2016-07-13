@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+
+<head>
+    <title>StartseiteGamenNews</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="generator" content="Webocton - Scriptly (www.scriptly.de)" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> <!-- Angular Animation -->
+    <link href="style.css" type="text/css" rel="stylesheet" /> <!-- CSS Datei -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    <!-- Javascript eingebunden -->
+
+    <script>
+
+
+// Cookies
+function setCookie(cname) {      // macht den Cookie
+    document.cookie = cname;    // Name wert und ablaufdatum
+}
+// Zweiter cookie
+function setCookie2(cookie2) {      // macht den Cookie
+    document.cpw = cookie2;   // Name wert und ablaufdatum
+};
+
+
+// Login
+function pasuser(form) {
+    if (form.id.value== /*document.cookie*/ "admin") {
+        // Cookie Benutzername
+        if (form.pass.value== /*document.cpw*/ "admin") {     // Cookie Passwort 2 Cookie funktioniert noch nicht
+            alert("Willkommen " + /*document.cookie*/  "admin");
+            window.location.href = "http://localhost:63342/NODEJS%202.0/webseite.html?_ijt=l8ls3kki7pu1a8uds8l4cepn2c";
+
+        } else {
+            alert("Falsches Passwort")
+        }
+    } else {
+        alert("Falscher Benutzername")
+    }
+}
+// Register
+function registerBN() {
+    var cookie1 = prompt("Wie lautet dein Benutzername?");
+    setCookie(cookie1)
+}
+
+function registerPW() {
+    var cookie2 = prompt("Wie soll dein Passwort sein?");
+    setCookie2(cookie2)
+}
+
+function register() {
+    window.document.location.replace("Registrieren.html"); //Seite Registrieren Weiterleiten
+}
+
+</script>
+
+
+</head>
+    <!-- Farbe ändern -->
+<body bgcolor="aqua">
+<!--        <input type="button" value="cookie" onClick="test()">    <!-- Wenn man draufdrückt gibt er in der Console den Cookie "set Cookie" aus -->
+<div id="register">
+    <form>
+  <!--      <input type="button" value="Benutzername" onclick="registerBN()" />
+        <input type="button" value="Passwort" onclick="registerPW()" />
+      -->  <input type="button" value="Register" onclick="register()" />
+
+    </form>
+</div>
+    <!-- Einloggen -->
+<center>
+    <table bgcolor="#7fff00" cellpadding="5" border="0">
+        <tr>
+            <td colspan="2">
+                <center>
+                    <h1>
+                        <i>
+                            <b>
+                                Login
+                            </b>
+                        </i>
+                    </h1>
+                </center>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h1>
+                    <i>
+                    <b>Benutzername:</b>
+                    </i>
+                </h1>
+            </td>
+        <td>
+            <form name="login">
+                <input name="id" type="text">
+        </td>
+        </tr>
+        <tr>
+            <td>
+                <h1>
+                    <i>
+                        <b>Passwort:</b>
+                    </i>
+                </h1>
+            </td>
+        <td>
+            <input name="pass"type="password">
+        </td>
+        </tr>
+        <tr>
+            <td>
+                <center>
+                    <input type="button" value="Login" onClick="pasuser(this.form)">
+                </center>
+            </td>
+        <td>
+            <center>
+                <br><input type="Reset">
+            </form>
+            </td>
+        </tr>
+    </table>
+
+
+
+        </div>
+</body>
+</html>

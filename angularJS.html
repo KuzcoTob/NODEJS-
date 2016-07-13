@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    <!-- Javascript eingebunden -->
+
+<script>
+
+
+
+    /*function test() {                                // gibt den Cookie in der als console
+     alert(document.cookie)
+     alert(document.cpw)
+     } */
+
+    // Login
+    /*
+    function pasuser(form) {
+        if (form.id.value== "name") {       // Cookie Benutzername
+            if (form.pass.value== "passwort" ) {     // Cookie Passwort 2 Cookie funktioniert noch nicht
+                alert("Willkommen " + "#")
+                location.replace = "./webseite.html"
+            } else {
+                alert("Falsches Passwort")
+            }
+        } else {
+            alert("Falscher Benutzername")
+        }
+    } */
+
+    function bn(){
+        var name = document.getElementById("bn").value;
+        console.log(name);
+
+    }
+
+    function pw() {
+        var passwort = document.getElementById("pw").value;
+        console.log(passwort);
+    }
+// Direktive
+/*directive("price", function () {
+        return {
+            restrict: "E",  // Atrribute und Element
+            scope: {
+                value: "="
+            },
+            template: "<span ng-show="value == 0"> kostenlos </span>" +
+                "<span ng-show='value > 0">{{value | currency}}</span>'
+        }
+    });
+
+
+</script>
+</head>
+
+<body>
+
+
+
+<div ng-app="">
+    <p>Benutzername: <input type="text" ng-model="name" id="bn">{{name}}</p>
+
+    <p>Passwort: <input id="pw" type="text" ng-model="pw" id="pw">{{pw}}</p>
+   <!--<p><input type="button" value="Login" onClick="pasuser(this.form)"></p>-->
+    <p>
+        <input type="button" value="register" onClick="bn(); pw() "/>
+    </p>
+</div>
+
+
+
+    <!-- Einloggen
+                        <form name="login">
+                            <h5>Benutzername</h5>
+                            <input name="id" type="text">
+                            <h5>Passwort</h5>
+                            <input name="pass"type="password">
+                            <p><input type="button" value="Login" onClick="pasuser(this.form)"</p>
+
+                        </form>
+    <input type="Reset">
+
+-->
+</body>
+</html>
+

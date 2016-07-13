@@ -1,0 +1,51 @@
+Body {
+    background-color: #000000;
+}
+
+h1,h2,h3,h4,h5,p {
+    color: chartreuse;
+}
+
+input {
+    color: deeppink;
+}
+
+b {
+    color: #000000;
+}
+
+
+.register {
+    width: 11%;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    background-color: black;
+}
+
+#Animation {
+    color: aqua;
+
+}
+
+a {
+    color: azure;
+}
+a:active{
+    color: aqua;
+}
+
+a:visited{
+    color: gold;
+}
+
+/* HIntergrund Bild*/
+#demo {
+     background-image:
+             url(http://www.playnation.de/uploads/articles/artpic-36569.jpg);
+
+     height: 20em;
+
+     width: 30em;
+ }
+

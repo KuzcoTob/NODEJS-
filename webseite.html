@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webseite</title>
+    <link href="style.css" type="text/css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+    <script>
+    $(document).ready(function(){
+        $("a").attr({title: "Wissenwertes zu Geistern", href: "https://de.wikipedia.org/wiki/Gespenst"})
+    });
+
+    //SPIEL
+        function spiel() {
+            var x = 1;
+            var y = 3;
+
+            var antwort = 0;
+            var richtig = true;
+            var score = 0;
+            // Soll die Spielregeln anzeigen (erst wenn Spiel gedrückt wird
+           // $(".geisterspiel").text("Dies sind die Spielregeln:");
+            while (richtig == true) {
+                var geist = Math.round(Math.random()*(y - x)) + 1; //Zahl zwischen 1 und 31
+                console.log(geist);
+                antwort = prompt("Vor dir sind 3 Türen. Hinter einer ist ein Geist. Welche Tür nimmst du?");
+                if (antwort >= 4 || antwort <= 0) {
+                    console.log(score + "Zähler");
+                    alert("Es gibt nur 3 Türen. Das Spiel ist vorbei");
+                    richtig = false;
+                    alert("Deine Punkte = " + score)
+                    $(document).ready(function(){
+                        $(".ende").text(score);
+                    });
+                } else if (antwort == geist) {
+                    console.log(score + "Zähler");
+                    richtig = false;
+                    alert("Deine Punkte = " + score);
+                    $(document).ready(function(){
+                        $(".ende").text(score);
+                    });
+                } else {
+                    alert("Sehr gut du bist eine Runde weiter " );
+                    score = score + 1;
+                    console.log(score + " Score")
+
+                }
+            }
+        };
+    // Animation funkt nur mit Internet
+
+    $(document).ready(function(){
+        $("button").click(function(){
+            var div = $("div");
+            div.animate({right: '1px'}, "fast");
+            div.animate({fontSize: '2em'}, "slow");
+        });
+    });
+
+
+
+    </script>
+</head>
+
+<body id="demo">
+<!-- Besucher Zähler (einfacher PHP Counter) -->
+
+    <button>Heranzoomen</button>
+    <h1>Gibt es Geister oder nicht?</h1>
+    <div id="Animation">
+
+        <p>Als Gespenst bezeichnet der Volksglaube ein meist mit übernatürlichen Fähigkeiten ausgestattetes, aber zugleich mit menschlichen Eigenschaften versehenes Geistwesen, das „spukt“ – also den Menschen in irgendeiner Weise „erscheint“. Sein zeitweiliges Erscheinen vollzieht sich häufig in nebelhaft durchsichtiger, angedeutet menschlicher oder nicht menschlicher Gestalt. Gespenster gibt es gleichförmig in der Vorstellungswelt verschiedener Kulturen.
+        Im engeren Sinne des Wortes sind Gespenster nur die Totengeister.</p>
+    </div>
+    <h2><a href="https://de.wikipedia.org/wiki/Gespenst">Mehr über Geister</a></h2>
+
+    <p class="geisterspiel">Drücke auf Start um das Spiel zu beginnnen </p>
+    <input type="button" value="Start" onclick="spiel()"/>
+
+    <p style="color: blue;">Erzielte Punkte: <p class="ende">0</p></p>
+
+
+<div ng-app="">
+    <p> Hallo, ich bin <input type="text" ng-model="name" >{{name}}</p>
+    <p>und bin<input id="pw" type="text" ng-model="alter" >{{alter}}</p>
+</div>
+
+</body>
